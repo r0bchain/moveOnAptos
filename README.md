@@ -33,14 +33,14 @@
 - **Aptos Learn** guías paso a paso para aprender Aptos (en inglés).
 - Otro repositorio con más ejemplos: [move-by-examples](https://github.com/aptos-labs/move-by-examples), cotiene ejemplos actualizados
 
-### Ejecutado tests
+### Ejecutando tests
 
 Para correr los tests para todos los ejemplos ejecuta este comando:
 ```bash
 cargo test -- --nocapture
 ```
 
-Para correr un test para un expecífico ejemplo, corre este otro comando (e.g., `hola_aptos_blockchain`):
+Para correr un test para un ejemplo expecífico, corre este otro comando (e.g., `hola_aptos_blockchain`):
 ```bash
 cargo test -- hola_aptos_blockchain --nocapture
 ```
