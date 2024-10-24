@@ -1,6 +1,62 @@
 
 # Lección 2
 
+## Instalamos la CLI
+
+La instalación dependerá del SO que estés utilizando, en **Windows** si trabajas con **WSL** (recomendable), podrás instalarlo igual que en **Linux**, en este curso veremos como 
+se instala en sistemas Linux (WSL en Windows). Para ello seguiremos estas [instrucciones](https://aptos.dev/en/build/cli/install-cli/install-cli-linux)
+Para **MAC** visita este enlace y sigue las [instrucciones](https://aptos.dev/en/build/smart-contracts/create-package)
+
+Para otros sistemas operativos, simplemente sigue las instrucciones de este enlace [Instalar CLI para otros SOs](https://aptos.dev/en/build/cli) 
+
+## Creamos un paquete 
+**Aclaración**: En Move, un package (paquete) es una **colección de módulos y scripts** agrupados de manera lógica que permiten organizar y gestionar el código de manera eficiente. Los paquetes en Move funcionan de manera similar a los paquetes en otros lenguajes de programación: permiten agrupar código relacionado, gestionar dependencias y facilitar la distribución y reutilización.
+
+```bash
+aptos move init --name <PROJECT_NAME>
+```
+
+Ahora deberias tener una estructura similar a esta:
+```bash
+- scripts
+- sources
+- tests
+- Move.toml
+```
+También puedes crear el proyecto usando una de estas [plantillas](https://aptos.dev/en/build/cli/start-from-template), pero por ahora no usaremos plantillas y crearemos todo desde cero.
+
+## Actualizamos Move.toml
+#### ¿Qué es y que hace este archivo?
+
+El archivo Move.toml es un archivo de **configuración** utilizado en paquetes de Move para **gestionar la estructura del proyecto y sus dependencias**
+```
+[package]
+name = "hello_aptos_blockchain"
+version = "1.0.0"
+authors = []
+
+[addresses]
+hello_blockchain = "_"
+
+[dev-addresses]
+hello_aptos_blockchain = ""
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+```
+
+**name**: nombre de tu paquete
+
+**version**: versión del paquete (por defecto es "0.0.0")
+
+**addresses**: Describe en qué dirección se desplegará el módulo. Estas son direcciones con nombre que pueden ser utilizadas como alias. En el ejemplo anterior, usamos **hola_aptos_blockchain** como la dirección nombrada.
+
+Por ahora trabajaremos en la red **DEV**, por lo cual usaremos la address especificada en **dev-addresses**, el motivo de utilizar el guión en vez de una dirección hexadecimal, es porque podemos darle este valor cuando depleguemos el paquete, ya sea en un entorno de producción (entonces usaremos el valor que se encuentre en **addresses**), o en DEV, en este caso miraremos el valor de **dev-addresses**, también podemos proporcionar el valor de la dirección durante el despliegue.
+
+
+
 ## Importar librerias
 
 Al comienzo de nuestro primer módulo de ejemplo, importamos las librerias
