@@ -252,5 +252,29 @@ Si todo ha ido OK, veremos un mensaje similar a este
 ```bash
 aptos move deploy-object --address-name hello_aptos_blockchain
 ```
+Resultado
+```
+r0b@moveOnAptosEs:~/Development/moveOnAptosEs/lesson02/hello_aptos_blockchain$ aptos move deploy-object --address-name hello_aptos_blockchain
+Compiling, may take a little while to download git dependencies...
+UPDATING GIT DEPENDENCY https://github.com/aptos-labs/aptos-core.git
+INCLUDING DEPENDENCY AptosFramework
+INCLUDING DEPENDENCY AptosStdlib
+INCLUDING DEPENDENCY MoveStdlib
+BUILDING hello_aptos_blockchain
+Do you want to deploy this package at object address 0x8a1bd463e5235c3dfe7b580efac2ffa83d671ec06e47904736ca1be6820ee2a6 [yes/no] >
+yes
+package size 1980 bytes
+Do you want to submit a transaction for a range of [223100 - 334600] Octas at a gas unit price of 100 Octas? [yes/no] >
 
-En la siguiente lección veremos más temas interesantes y seguiremos trabajando con los comandos de la CLI.
+Do you want to submit a transaction for a range of [223100 - 334600] Octas at a gas unit price of 100 Octas? [yes/no] >
+
+Do you want to submit a transaction for a range of [223100 - 334600] Octas at a gas unit price of 100 Octas? [yes/no] >
+yes
+Transaction submitted: https://explorer.aptoslabs.com/txn/0x585d15e1efcaefa30256fe02ec9aba19b60e9b8ef2c3cc42cdfa5cdd89c43d31?network=devnet
+Code was successfully deployed to object address 0x8a1bd463e5235c3dfe7b580efac2ffa83d671ec06e47904736ca1be6820ee2a6
+{
+  "Result": "Success"
+}
+```
+
+En la siguiente lección veremos más temas interesantes, interactuaremos con el módulo que hemos desplegado, y seguiremos trabajando con los comandos de la CLI.
