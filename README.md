@@ -1,6 +1,5 @@
 # MoveOnAptos en español
 
-```md
 # README
 
 ## Jugar con los ejemplos
