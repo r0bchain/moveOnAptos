@@ -1,6 +1,9 @@
 
 # Lección 2
 
+## Instalamos el wallet
+Para el curso vamos a utilizar el wallet llamado [WELLDONE wallet](https://chromewebstore.google.com/detail/welldone-wallet-for-multi/bmkakpenjmcpfhhjadflneinmhboecjf), que tiene un plugin para Chrome/Brave y es muy sencillo de utilizar, aquí os dejo el [enlace para la descarga](https://chromewebstore.google.com/detail/welldone-wallet-for-multi/bmkakpenjmcpfhhjadflneinmhboecjf), y en esta lección 2, explicamos como instalarlo paso a paso y su uso básico para seguir el curso.
+
 ## Instalamos la CLI
 
 La instalación dependerá del SO que estés utilizando, en **Windows** si trabajas con **WSL** (recomendable), podrás instalarlo igual que en **Linux**, en este curso veremos como 
