@@ -1,6 +1,62 @@
 
 # Lección 2
 
+##  inicializar el entorno de trabajo de Aptos en una máquina local
+
+```bash
+aptos init
+```
+```
+r0b@moveOnAptosEs:~/Development/moveOnAptosEs/lesson02/hello_aptos_blockchain$ aptos init
+Configuring for profile default
+Choose network from [devnet, testnet, mainnet, local, custom | defaults to devnet]
+
+No network given, using devnet...
+Enter your private key as a hex literal (0x...) [Current: None | No input: Generate new key (or keep one if present)]
+
+No key given, generating key...
+Account 0x1222f2ebc2fbd77ecdbdb4eefef552943978effc92d72b7114134183dff6e6e6 doesn't exist, creating it and funding it with 100000000 Octas
+Account 0x1222f2ebc2fbd77ecdbdb4eefef552943978effc92d72b7114134183dff6e6e6 funded successfully
+
+---
+Aptos CLI is now set up for account 0x1222f2ebc2fbd77ecdbdb4eefef552943978effc92d72b7114134183dff6e6e6 as profile default!
+ See the account here: https://explorer.aptoslabs.com/account/0x1222f2ebc2fbd77ecdbdb4eefef552943978effc92d72b7114134183dff6e6e6?network=devnet
+ Run `aptos --help` for more information about commands
+{
+  "Result": "Success"
+}
+```
+Por defecto la red seleccionada es devNet, as'i que simplemente **pulsamos ENTER** en la primera pregunta 
+```
+Choose network from [devnet, testnet, mainnet, local, custom | defaults to devnet]
+```
+
+En la segunda pregunta, hacemos lo mismo, como aún no tenemos una **clave privada**, pulsamos ENTER y el script generará una para nosotros
+```
+Enter your private key as a hex literal (0x...) [Current: None | No input: Generate new key (or keep one if present)]
+```
+
+##Nota IMPORATNTE de SEGURIDAD: 
+**JAMÁS COMPARTAS UNA CLAVE PRIVADA CON NADIE**, en este caso estamos usando la **devnet**, es decir todos los **fondos son ficticios**, por lo cual no pasa nada, pero como 
+regla generael **NUNCA, NUNCA, NUNCA JAMÁS COMPARTAS UNA CLAVE PRIVADA**
+
+Ahora vemoros que tenemos una nueva carpeta llamada .aptos (oculta), dentro un archivo config.yaml, donde tendremos entre otras cosas la clave privada de nuestra cuenta en la devnet
+
+```
+$ cat .aptos/config.yaml 
+---
+profiles:
+  default:
+    network: Devnet
+    private_key: "0x3040ce17af668567483997edbb5a76789557ed5325da757f83b"
+    public_key: "0x3e5d0d4fdc19dcc8862804246f5a7b3181e5f9231fa880900147924367ab57ea"
+    account: 1222f2ebc2fbd77ecdbdb4eefef552943978effc92d72b7114134183dff6e6e6
+    rest_url: "https://fullnode.devnet.aptoslabs.com"
+    faucet_url: "https://faucet.devnet.aptoslabs.com"
+r0b@r0b-Predator-PT315-52:~/Development/moveOnAptos/lesson02/hello_aptos_blockchain$
+```
+Nota: necesitaremos saber la **private_key** para agregarla al wallet y así añadir nuestra primera cuenta que usaremos durante el curso. En el vídep está explicado paso a paso.
+
 ## Instalamos el wallet
 Para el curso vamos a utilizar el wallet llamado [WELLDONE wallet](https://chromewebstore.google.com/detail/welldone-wallet-for-multi/bmkakpenjmcpfhhjadflneinmhboecjf), que tiene un plugin para Chrome/Brave y es muy sencillo de utilizar, aquí os dejo el [enlace para la descarga](https://chromewebstore.google.com/detail/welldone-wallet-for-multi/bmkakpenjmcpfhhjadflneinmhboecjf), y en esta lección 2, explicamos como instalarlo paso a paso y su uso básico para seguir el curso.
 
