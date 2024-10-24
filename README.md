@@ -23,7 +23,7 @@
 4. Puedes usar la Aptos CLI para compilar, testear, publicar, y ejecutar estos contratos usando estos comandos:  
    [Aptos Move CLI](https://aptos.dev/move/move-on-aptos/cli/)
 
-5. Si becesitas istalar la Aptos CLI,  sigue estas instrucciones (en inglés):  
+5. Si necesitas instalar la Aptos CLI,  sigue estas instrucciones (en inglés):  
    [Instalar Aptos CLI](https://aptos.dev/tools/aptos-cli/install-cli/)
 
 > **WARNING**: Estos ejemplos programados con el lenguaje Move **NO** han sido auditados. Si los utilizas en produción, hazlo bajo tu propio riesgo. Especialmente ten cuidado con los ejemplos que contienen código criptografico complejo (e.g., `drand`, `veiled_coin`).
