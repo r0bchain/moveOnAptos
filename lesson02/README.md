@@ -55,6 +55,7 @@ subdir = "aptos-move/framework/aptos-framework"
 
 Por ahora trabajaremos en la red **DEV**, por lo cual usaremos la address especificada en **dev-addresses**, el motivo de utilizar el guión en vez de una dirección hexadecimal, es porque podemos darle este valor cuando depleguemos el paquete, ya sea en un entorno de producción (entonces usaremos el valor que se encuentre en **addresses**), o en DEV, en este caso miraremos el valor de **dev-addresses**, también podemos proporcionar el valor de la dirección durante el despliegue.
 
+Al final de este README desplegaremos el paquete en la red DEV usando los comandos necesarios, sigue leyendo...
 
 
 ## Importar librerias
@@ -163,4 +164,34 @@ Contexto General
 Las pruebas en Move son esenciales para garantizar que los contratos inteligentes se comporten como se espera y que los cambios realizados no introduzcan errores. Al utilizar atributos como #[test], los desarrolladores pueden crear pruebas automatizadas que ayudan a validar la lógica del código en el desarrollo de aplicaciones blockchain.
 
 Para más información sobre pruebas en Move y el uso de atributos como #[test], puedes consultar la [documentación de Aptos sobre Move referente a los tests](https://aptos.dev/en/build/smart-contracts/book/unit-testing)
-.
+
+### Compilamos 
+##### Dirección por defecto que tenemos en el archivo Move.toml definida
+
+```bash
+aptos move compile --named-addresses hello_aptos_blockchain=default
+```
+##### Dirección que le pasamos nosotros
+
+```
+aptos move compile --named-addresses hello_aptos_blockchain=0x1234
+```
+
+Si todo ha ido OK, veremos un mensaje similar a este
+```
+{
+  "Result": [
+    "<PUBLISHING_ADDRESS>::<MODULE_NAME>"
+  ]
+}
+```
+.Visita la [docu oficial](https://aptos.dev/en/build/smart-contracts/compiling) para más detalles 
+
+### Desplegamos en la blockchain (Deploy)
+#### Deploy code to an object
+
+```bash
+aptos move deploy-object --address-name hello_aptos_blockchain
+```
+
+En la siguiente lección veremos más temas interesantes y seguiremos trabajando con los comandos de la CLI.
