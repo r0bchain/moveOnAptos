@@ -69,6 +69,17 @@ En este caso estamos delante de una **función pública**, que además tiene el 
         borrow_global<MessageHolder>(addr).message
     }
 ```
+En este otro ejemplo, veremos dos cosas interesantes, el atributo **entry** y **acquire**.
+```
+  public entry fun set_message(account: signer, message: string::String)
+    acquires MessageHolder {
+      // Cuerpo de la fn
+    }
+```
+El **atributo  #[entry]** en Move se utiliza para marcar una función como un **punto de entrada para la ejecución de una transacción o un script**. Esto significa que cuando se invoca una función marcada con #[entry], se ejecuta como parte de una transacción en la blockchain.
+
+**acquire** se utiliza para **adquirir recursos**. Esto permite que una función obtenga la propiedad de un recurso específico que se encuentra en la blockchain, lo que es fundamental para **garantizar que solo una instancia de un recurso sea utilizada por un módulo o función a la vez**. Mas info en la docu oficial sobre [acquire](https://aptos.dev/en/build/smart-contracts/book/functions#acquires)
+
 Todas las funciones se declaran por defecto como **privadas** si no se indica lo contrario, vamos a ver un ejemplo
 ```
 // Función privada
@@ -79,3 +90,21 @@ Todas las funciones se declaran por defecto como **privadas** si no se indica lo
 Esta función **PRIVADA** NO es accesible desde fuera del módulo donde está declarada 
 **Nota**: los distintos tipos de funciones las iremos viendo durante el curso a medida que programemos más contratos inteligentes (también llamados módulos), pero si tienes curiosidad, también
 puedes visitar la documentación oficial y leer en inglés sobre las [funciones](https://aptos.dev/en/build/smart-contracts/book/functions).
+
+Este fragmento de código en Move muestra una función de prueba que verifica si un remitente puede establecer un mensaje.
+```  #[test(account = @0x1)]
+    public entry fun sender_can_set_message(account: signer) acquires MessageHolder {
+        let msg: string::String = string::utf8(b"Running test for sender_can_set_message...");
+        debug::print(&msg);
+        // ......
+    }
+
+```
+#### Propósito de la Función
+El propósito principal de esta función es asegurarse de que la funcionalidad para establecer un mensaje en la cuenta funcione correctamente. La función de prueba simula el entorno necesario y realiza la verificación mediante aserciones.
+
+Contexto General
+Las pruebas en Move son esenciales para garantizar que los contratos inteligentes se comporten como se espera y que los cambios realizados no introduzcan errores. Al utilizar atributos como #[test], los desarrolladores pueden crear pruebas automatizadas que ayudan a validar la lógica del código en el desarrollo de aplicaciones blockchain.
+
+Para más información sobre pruebas en Move y el uso de atributos como #[test], puedes consultar la [documentación de Aptos sobre Move referente a los tests](https://aptos.dev/en/build/smart-contracts/book/unit-testing)
+.
