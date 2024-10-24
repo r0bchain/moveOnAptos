@@ -36,9 +36,10 @@ En la segunda pregunta, hacemos lo mismo, como aún no tenemos una **clave priva
 Enter your private key as a hex literal (0x...) [Current: None | No input: Generate new key (or keep one if present)]
 ```
 
-##Nota IMPORATNTE de SEGURIDAD: 
-**JAMÁS COMPARTAS UNA CLAVE PRIVADA CON NADIE**, en este caso estamos usando la **devnet**, es decir todos los **fondos son ficticios**, por lo cual no pasa nada, pero como 
-regla generael **NUNCA, NUNCA, NUNCA JAMÁS COMPARTAS UNA CLAVE PRIVADA**
+## Nota IMPORTANTE de SEGURIDAD: 
+**JAMÁS COMPARTAS UNA CLAVE PRIVADA CON NADIE**, 
+en este caso estamos usando la **devnet**, es decir todos los **fondos son ficticios**, por lo cual no pasa nada, pero como regla generael 
+**NUNCA, NUNCA, NUNCA JAMÁS COMPARTAS UNA CLAVE PRIVADA**
 
 Ahora vemoros que tenemos una nueva carpeta llamada .aptos (oculta), dentro un archivo config.yaml, donde tendremos entre otras cosas la clave privada de nuestra cuenta en la devnet
 
