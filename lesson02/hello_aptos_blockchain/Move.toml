@@ -1,15 +1,15 @@
 [package]
-name = "hello_aptos_blockchain"
-version = "1.0.0"
+name = 'hello_aptos_blockchain'
+version = '1.0.0'
 authors = []
 
 [addresses]
+hello_aptos_blockchain = "_"
 
 [dev-addresses]
+hello_aptos_blockchain = "0x42"
 
 [dependencies.AptosFramework]
-git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "mainnet"
-subdir = "aptos-move/framework/aptos-framework"
-
-[dev-dependencies]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'mainnet'
+subdir = 'aptos-move/framework/aptos-framework'
