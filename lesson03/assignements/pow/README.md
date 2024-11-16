@@ -58,5 +58,3 @@ This command searches for a valid nonce with a difficulty level of 6.
 
 Happy coding! 🚀  
 ```  
-
-This file is clean, organized, and provides clear instructions for users to follow. Let me know if you need further modifications!
