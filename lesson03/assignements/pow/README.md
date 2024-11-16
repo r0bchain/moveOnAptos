@@ -80,7 +80,7 @@ aptos move compile
    aptos move publish --network testnet --profile testnet
    ```
 
-4. After deploy (publish) the module, please run the **initialize** function, you can use the **APTOS explorer** [APTOS Explorer]( https://explorer.aptoslabs.com/ ) to find your account and the module deployied (please make sure you are in the testnet and not in the devnet or mainnet)
+4. After deploy (publish) the module, please run the **initialize** function, you can use the [APTOS Explorer]( https://explorer.aptoslabs.com/ ) to find your account and the module deployied (please make sure you are in the testnet and not in the devnet or mainnet)
 
 This will top up your account and publish the necessary modules to the testnet network.  
 
