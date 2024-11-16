@@ -2,7 +2,7 @@
 ```markdown
 # Proof of Work Exercise  
 
-This exercise demonstrates how to use Aptos for proof-of-work operations. Follow the steps below to get started.  
+This exercise demonstrates the proof-of-work operations. Follow the steps below to get started.  
 
 ## Initialize the Application  
 
