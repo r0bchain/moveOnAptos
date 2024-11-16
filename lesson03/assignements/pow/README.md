@@ -1,4 +1,5 @@
-Here’s the updated `README.md` file with information about how to install `ts-node`:  
+``Proof of work exercise``
+(credits to Jun from Shardlab)
 
 ```markdown
 # Proof of Work Exercise  
