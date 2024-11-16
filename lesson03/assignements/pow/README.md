@@ -1,5 +1,4 @@
-Here’s a properly formatted `README.md` file with grammar corrections and clearer explanations:  
-
+``Proof of Work exercise`` 
 ```markdown
 # Proof of Work Exercise  
 
