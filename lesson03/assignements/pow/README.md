@@ -53,7 +53,8 @@ aptos account fund-with-faucet --profile <profile> --amount 1500000000
 // note: in this example replace <profile> by testnet
 ```
 
-## Compile and ppublish the package (all the modules *.move inside the sources folder)  
+## Compile and publish the package 
+### (all the modules *.move inside the sources folder)  
 
 1. Compile
    
