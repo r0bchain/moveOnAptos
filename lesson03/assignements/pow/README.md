@@ -86,9 +86,6 @@ This will top up your account and publish the necessary modules to the testnet n
 
 1. Create a script to find a valid nonce for these three scenarios based on the difficulty (determined by the number of leading zeros in the prefix).
 
-#### Please read the comments in the module proofOfWork.move to get a better understanding, this constants below are crucial to undertand why the number of leading ceros for each difficulty 
-
-
 #### Clue: Check the proofOfWork.move module to understand how the nonce and the text are hashed. The easy and hard difficulties are hashed in the same way, while the normal one is slightly different. Everything is in the module, please take a look.
 
 ### EASY (0x0000) and HARD (0x00000000)
@@ -96,6 +93,8 @@ This will top up your account and publish the necessary modules to the testnet n
 
 ### NORMAL (0x000000)
 1. First, hash the binary representation of the text, and separately hash the binary representation of the nonce. After that, concatenate both hashes and hash them again.
+
+#### Please read the comments in the module proofOfWork.move to get a better understanding, this constants below are crucial to undertand why the number of leading ceros for each difficulty 
 
 ```
     const CHALLENGE: vector<u8> = b"Find the nonce!!";
