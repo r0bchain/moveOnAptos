@@ -10,8 +10,16 @@ module blockchain_rev_addr::proorOfWork {
     use std::option;
 
     const CHALLENGE: vector<u8> = b"Find the nonce!!";
+    //  Difficulty 2 is being mapped to 4 leading zeros in the hash 
+    //(equivalent to 2 bytes of zeros = 16 bits).
     const EASY_DIFFICULTY: u64 = 2;
+
+    //  Difficulty 3 is being mapped to 6 leading zeros in the hash
+    // (6 leading ceros X 4 = 24 bits = 3 bytes) 
     const NORMAL_DIFFICULTY: u64 = 3;
+
+    //  Difficulty 4 is being mapped to 8 leading zeros in the hash 
+    // (8 leading ceros X 4 = 31 bits = 4 bytes) 
     const HARD_DIFFICULTY: u64 = 4;
 
     struct Treasury has key {

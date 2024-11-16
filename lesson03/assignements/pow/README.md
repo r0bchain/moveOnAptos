@@ -47,9 +47,21 @@ This exercise demonstrates how to use Aptos for proof-of-work operations. Follow
 
 ## Top Up Your Testnet Account  
 
-To top up your testnet account with funds:  
+1. To top up your testnet account with funds: 
+```
+aptos account fund-with-faucet --profile <profile> --amount 1500000000
+// note: in this example replace <profile> by testnet
+```
 
-1. Ensure your configuration file (`config.yaml`) looks like this:  
+## Compile and ppublish the package (all the modules *.move inside the sources folder)  
+
+1. Compile
+   
+```
+aptos move compile
+```
+
+2. Ensure your configuration file (`config.yaml`) looks like this:  
    ```yaml
    ---
    profiles:
@@ -62,16 +74,35 @@ To top up your testnet account with funds:
        faucet_url: "https://faucet.testnet.aptoslabs.com"
    ```  
 
-2. Run the following command in the terminal, specifying the profile you want to use (`testnet` in this example):  
+3. Run the following command in the terminal, specifying the profile you want to use (`testnet` in this example):  
    ```bash
    aptos move publish --network testnet --profile testnet
    ```  
 
 This will top up your account and publish the necessary modules to the testnet network.  
 
----
+## The exercise
 
-## Find a Nonce  
+1. Create a script to find a valid nonce for these three scenarios based on the difficulty (determined by the number of leading zeros in the prefix).
+
+``` Please read the comments in the module proofOfWork.move to get a better understanding, this constants below are crucial to undertand why the number of leading ceros for each difficulty ```
+
+```
+    const CHALLENGE: vector<u8> = b"Find the nonce!!";
+    //  Difficulty 2 is being mapped to 4 leading zeros in the hash 
+    //(equivalent to 2 bytes of zeros = 16 bits).
+    const EASY_DIFFICULTY: u64 = 2;
+
+    //  Difficulty 3 is being mapped to 6 leading zeros in the hash
+    // (6 leading ceros X 4 = 24 bits = 3 bytes) 
+    const NORMAL_DIFFICULTY: u64 = 3;
+
+    //  Difficulty 4 is being mapped to 8 leading zeros in the hash 
+    // (8 leading ceros X 4 = 31 bits = 4 bytes) 
+    const HARD_DIFFICULTY: u64 = 4;
+```
+
+## Test the finished exercise. Find a Nonce  
 
 To complete the proof-of-work exercise, you will run a script to find a valid nonce.  
 
