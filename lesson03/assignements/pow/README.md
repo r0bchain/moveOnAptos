@@ -1,5 +1,5 @@
 ``Proof of work exercise``
-(credits to Jun from Shardlab)
+(credits to Jun from @Shardlab)
 
 ```markdown
 # Proof of Work Exercise  
