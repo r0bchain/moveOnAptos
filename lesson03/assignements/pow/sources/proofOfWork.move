@@ -10,6 +10,9 @@ module blockchain_rev_addr::proorOfWork {
     use std::option;
 
     const CHALLENGE: vector<u8> = b"Find the nonce!!";
+
+    // In a hexadecimal hash, each hexadecimal digit represents 4 bits
+
     //  Difficulty 2 is being mapped to 4 leading zeros in the hash 
     //(equivalent to 2 bytes of zeros = 16 bits).
     const EASY_DIFFICULTY: u64 = 2;
